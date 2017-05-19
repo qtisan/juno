@@ -74,14 +74,14 @@ console.log(globalStyle);
               </List>
               <List style={{width: '100%'}} >
                 <Picker data={[{value: '1', label: '男'}, {value: '2', label: '女'}]} cols={1}
-                  {...getFieldProps('gender')}
+                  {...getFieldProps('gender', {initialValue: '1'})}
                   extra="请选择逝者性别" >
                   <List.Item arrow="horizontal">性别</List.Item>
                 </Picker>
               </List>
               <List style={{width: '100%'}}>
                 <DatePicker mode="date" title="日期" extra="请选择告别日期"
-                  {...getFieldProps('date')}
+                  {...getFieldProps('date', {initialValue: moment(new Date(), 'YYYY-MM-DD Z').utcOffset(8)})}
                   minDate={moment('2015-01-01 +0800', 'YYYY-MM-DD Z').utcOffset(8)}
                   maxDate={moment(new Date(), 'YYYY-MM-DD Z').utcOffset(8).add(90, 'day')} >
                   <List.Item arrow="horizontal">日期</List.Item>
