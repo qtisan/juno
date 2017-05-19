@@ -4,9 +4,10 @@
 import React from 'react';
 import styles from './CommonLayout.css';
 
-function CommonLayout({ children }) {
+function CommonLayout({ children, headerImage }) {
   return (
     <div className={styles.normal}>
+      <img src={headerImage} style={{width: '100%'}} />
       {children}
     </div>
   );

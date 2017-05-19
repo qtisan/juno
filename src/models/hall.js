@@ -9,18 +9,18 @@ import { hallService } from '../services';
 export default {
   namespace: 'hall',
   state: {
-    list: []
+    list: [],
+    loading: false
   },
   reducers: {
     search(state, {payload: {list}}) {
-      return { ...state, list: list };
+      return { ...state, list: list, loading: false };
     }
   },
   effects: {
     *submit({payload: {name, gender, date}}, {call, put}) {
       let formattedDate = moment(date, 'YYYY-MM-DD');
       let response = yield call(hallService.list, {name, gender, date: formattedDate});
-      console.log(response);
       yield put({type: 'search', payload: { list: response.data.data }});
     }
   }
