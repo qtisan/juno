@@ -7,6 +7,6 @@ const app = dva();
 
 startApp(app, require('./router'),
   [
-    require('../models/menu')
+    
   ]
 );

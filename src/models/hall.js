@@ -2,7 +2,6 @@
  * Created by qtisa on 2017/5/15.
  */
 
-import { routerRedux } from 'dva/router';
 import moment from 'moment';
 import { hallService } from '../services';
 
@@ -14,7 +13,7 @@ export default {
   },
   reducers: {
     search(state, {payload: {list}}) {
-      return { ...state, list: list, loading: false };
+      return { ...state, list: list };
     }
   },
   effects: {

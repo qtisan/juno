@@ -61,7 +61,7 @@ function Hall({dispatch, form, list, loading}) {
   const dataSource = new ListView.DataSource({
     rowHasChanged: (row1, row2) => row1.id != row2.id
   }).cloneWithRows(list);
-console.log(globalStyle);
+  
   return (
     <CommonLayout headerImage={missing}>
       <div className={styles.normal}>

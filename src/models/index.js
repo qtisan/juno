@@ -3,3 +3,4 @@
  */
 
 export const hall = require('./hall');
+export const deposit = require('./deposit');
