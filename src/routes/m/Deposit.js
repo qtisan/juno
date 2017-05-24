@@ -7,7 +7,7 @@ import globalStyle from '../../utils/global.css';
 import CommonLayout from '../../layouts/m/CommonLayout';
 import { Icon, Tabs, WhiteSpace, Button, List, InputItem, Picker, DatePicker, Toast, Card, ListView } from 'antd-mobile';
 
-import missing from '../../assets/missing.jpg';
+import missing from '../../assets/deposit.jpg';
 import man from '../../assets/man.png';
 
 import { createForm } from 'rc-form';
@@ -69,7 +69,7 @@ function Deposit({dispatch, form, list, loading}) {
     <CommonLayout headerImage={missing}>
       <div className={styles.normal}>
         <Tabs defaultActiveKey="1">
-          <TabPane tab="寄存查询" key="1">
+          <TabPane tab="寄存位查询" key="1">
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', height: '6rem' }}>
 
               <List renderHeader={() => '输入查询条件'} style={{width: '100%'}}>
@@ -77,7 +77,7 @@ function Deposit({dispatch, form, list, loading}) {
               </List>
               <List style={{width: '100%'}} >
                 <Picker data={[{value: '1', label: '男'}, {value: '2', label: '女'}]} cols={1}
-                  {...getFieldProps('gender', {initialValue: '1'})}
+                  {...getFieldProps('gender', {initialValue: ['1']})}
                   extra="请选择逝者性别" >
                   <List.Item arrow="horizontal">逝者性别</List.Item>
                 </Picker>
@@ -88,6 +88,7 @@ function Deposit({dispatch, form, list, loading}) {
               <List style={{width: '100%'}}>
                 <InputItem {...getFieldProps('phone')} clear placeholder="请填写经办人手机" autoFocus>手机号码</InputItem>
               </List>
+              <WhiteSpace />
               <Button className="btn" type="primary" style={{width: '100%', borderRadius: 0}}
                 onClick={submit} icon="search" loading={loading} >查询
               </Button>

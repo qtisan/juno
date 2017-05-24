@@ -4,3 +4,6 @@
 
 export const hallService = require('./hall');
 export const depositService = require('./deposit');
+export const wallService = require('./wall');
+export const consumeService = require('./consume');
+

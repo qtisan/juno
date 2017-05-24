@@ -61,7 +61,7 @@ function Hall({dispatch, form, list, loading}) {
   const dataSource = new ListView.DataSource({
     rowHasChanged: (row1, row2) => row1.id != row2.id
   }).cloneWithRows(list);
-  
+
   return (
     <CommonLayout headerImage={missing}>
       <div className={styles.normal}>
@@ -74,7 +74,7 @@ function Hall({dispatch, form, list, loading}) {
               </List>
               <List style={{width: '100%'}} >
                 <Picker data={[{value: '1', label: '男'}, {value: '2', label: '女'}]} cols={1}
-                  {...getFieldProps('gender', {initialValue: '1'})}
+                  {...getFieldProps('gender', {initialValue: ['1']})}
                   extra="请选择逝者性别" >
                   <List.Item arrow="horizontal">性别</List.Item>
                 </Picker>

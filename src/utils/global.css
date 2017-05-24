@@ -3,3 +3,7 @@
   color: #406acf;
   text-decoration: underline;
 }
+
+.no_padding {
+  padding: 0 !important;
+}

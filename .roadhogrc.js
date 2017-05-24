@@ -12,9 +12,10 @@ const svgSpriteDirs = [
 const pxtorem = require('postcss-pxtorem');
 
 export default {
-  entry: ["src/pages/index.js", "src/pages/index-mobile.js"],
+  entry: ["src/pages/index.js", "src/pages/m/m.js"],
   outputPath: "./dist",
   svgSpriteLoaderDirs: svgSpriteDirs,
+  multipage: true,
   autoprefixer: {
     browsers: [
       "iOS >= 8", "Android >= 4"
