@@ -15,7 +15,6 @@ export default {
   entry: ["src/pages/index.js", "src/pages/m/m.js"],
   outputPath: "./dist",
   svgSpriteLoaderDirs: svgSpriteDirs,
-  multipage: true,
   autoprefixer: {
     browsers: [
       "iOS >= 8", "Android >= 4"
