@@ -3,8 +3,23 @@
  */
 import request from '../utils/request';
 import { stringify } from 'querystring';
+import { parse } from '../utils/parser';
+import uuid from 'uuid/v4';
 
-export async function list(data) {
-  console.log(data);
-  return request(`/hall/list?${stringify(data)}`);
+export function *list(data) {
+  let res = yield request(`/middle/hall/list?${stringify(data)}`);
+  console.log(res);
+  if (!res.data.success) {
+    console.error(res.data.message);
+  }
+  let list = res.data.data;
+  return parse(list, {
+    id: uuid(),
+    name: 'deadname',
+    gender: 'sexname',
+    age: 'deadage',
+    date: "hallbegin",
+    hall: "hallname",
+    image: "image"
+  });
 }

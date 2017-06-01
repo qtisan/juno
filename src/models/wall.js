@@ -20,8 +20,8 @@ export default {
   },
   effects: {
     *submit({payload}, {call, put}) {
-      let response = yield call(wallService.list, {payload});
-      yield put({type: 'search', payload: { list: response.data.data }});
+      let list = yield call(wallService.list, {payload});
+      yield put({type: 'search', payload: { list }});
     }
   }
 }

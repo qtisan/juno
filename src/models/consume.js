@@ -23,8 +23,8 @@ export default {
   },
   effects: {
     *submit({payload: {name, cremation, year}}, {call, put}) {
-      let response = yield call(consumeService.list, {name, cremation, year});
-      yield put({type: 'search', payload: { ...response.data.data }});
+      let data = yield call(consumeService.list, {name, cremation, year});
+      yield put({type: 'search', payload: { ...data }});
     }
   }
 }

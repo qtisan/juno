@@ -50,7 +50,7 @@ function Hall({dispatch, form, list, loading}) {
   const row = (rowData, sectionID, rowID) => {
     return (
       <Card key={rowID} full>
-        <Card.Header title={rowData.name} thumb={man} extra={<span>{rowData.gender}&nbsp;{rowData.age}岁</span>} />
+        <Card.Header title={rowData.name} thumb={man} extra={<span>{rowData.gender}&nbsp;</span>} />
         <Card.Body>
           <div>告别仪式于<b>{rowData.date}</b>在<b>{rowData.hall}</b>举行</div>
         </Card.Body>

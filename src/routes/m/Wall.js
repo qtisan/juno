@@ -57,6 +57,7 @@ function Wall({dispatch, form, list, loading}) {
         <Card.Body>
           <div onLoad={listLoaded}>先人骨灰安放于&nbsp;<b>{rowData.position} 壁葬位</b>&nbsp;</div>
         </Card.Body>
+        <Card.Footer content={<span>将于 <b> {rowData.expired} </b> 到期，请及时缴费。</span>} />
       </Card>
     );
   };

@@ -126,8 +126,106 @@ var mocks = {
         }
       ]
     }
-  }
+  },
 
+
+  'GET /middle/hall/list': {
+    "data": [
+      {
+        "deadage": "55",
+        "deadname": "李长江",
+        "hallbegin": "new Date(1496231474152)",
+        "halldate": "new Date(1496231474152)",
+        "hallend": "new Date(1496231474152)",
+        "hallname": "兰品厅",
+        "image": "/images/s3.jpg",
+        "sexname": "男"
+      },
+      {
+        "deadage": "86",
+        "deadname": "李长江",
+        "hallbegin": "new Date(1496231474152)",
+        "halldate": "new Date(1496231474152)",
+        "hallend": "new Date(1496231474152)",
+        "hallname": "兰品厅",
+        "image": "/images/s3.jpg",
+        "sexname": "女"
+      }
+    ],
+    "success": true,
+    "message": ""
+  },
+  'GET /middle/deposit/list': {
+    "success": true,
+    "error_no": 0,
+    "message": "ok",
+    "data": [
+      {
+        "deadname": "李长江",
+        "deadsex": "男",
+        "checkprice": 870.00,
+        "useend": "2017-06-14 15:00",
+        "checkname": "15-3303"
+      },
+      {
+        "deadname": "张媞",
+        "deadsex": "女",
+        "checkprice": 640.00,
+        "useend": "2017-07-01 09:00",
+        "checkname": "12-1088"
+      }
+    ]
+  },
+  'GET /middle/wall/list': {
+    "success": true,
+    "error_no": 0,
+    "message": "ok",
+    "data": [
+      {
+        "deadname": "李长江",
+        "deadsex": "男",
+        "enddate": "2017-07-01 09:00",
+        "tname": "15-3303"
+      },
+      {
+        "deadname": "张媞",
+        "deadsex": "女",
+        "enddate": "2017-07-01 09:00",
+        "tname": "12-1088"
+      }
+    ]
+  },
+  'GET /middle/consume/list': {
+    "success": true,
+    "error_no": 0,
+    "message": "ok",
+    "data": [
+      {
+        "billdate": "new Date(1496232115694)",
+        "prdamount": 100,
+        "prdcount": 10,
+        "prdname": "香烛",
+        "prdpre": 9,
+        "prdprice": 1
+      },
+      {
+        "billdate": "new Date(1496232115694)",
+        "prdamount": 445.22,
+        "prdcount": 10,
+        "prdname": "XL大花圈",
+        "prdpre": 112,
+        "prdprice": 44
+      },
+      {
+        "billdate": "new Date(1496232115694)",
+        "prdamount": 424.1,
+        "prdcount": 10,
+        "prdname": "遗像框3XL精装版",
+        "prdpre": 5,
+        "prdprice": 42
+      }
+    ]
+  }
 
 };
 

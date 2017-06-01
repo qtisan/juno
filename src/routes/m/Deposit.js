@@ -53,11 +53,12 @@ function Deposit({dispatch, form, list, loading}) {
   const row = (rowData, sectionID, rowID) => {
     return (
       <Card key={rowID} full>
-        <Card.Header title={rowData.name} thumb={man} extra={<span>{rowData.gender}&nbsp;{rowData.age}岁</span>} />
+        <Card.Header title={rowData.name} thumb={man} extra={<span>{rowData.gender}&nbsp;</span>} />
         <Card.Body>
           <div onLoad={listLoaded}>先人骨灰安放于&nbsp;<b>{rowData.position} 柜位</b>&nbsp;</div>
         </Card.Body>
         <Card.Footer content={<span>将于 <b> {rowData.expired} </b> 到期，请及时缴费。</span>} />
+        <Card.Footer content={<span>年费： <b> ￥{rowData.age} </b>。</span>} />
       </Card>
     );
   };

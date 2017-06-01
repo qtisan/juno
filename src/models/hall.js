@@ -22,8 +22,8 @@ export default {
   effects: {
     *submit({payload: {name, gender, date}}, {call, put}) {
       let formattedDate = moment(date, 'YYYY-MM-DD');
-      let response = yield call(hallService.list, {name, gender, date: formattedDate});
-      yield put({type: 'search', payload: { list: response.data.data }});
+      let list = yield call(hallService.list, {name, gender, date: formattedDate});
+      yield put({type: 'search', payload: { list }});
     }
   }
 }
