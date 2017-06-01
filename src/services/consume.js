@@ -16,9 +16,9 @@ export function *list(data) {
   }
   let list = res.data.data;
   let result = {
-    payroll: _.reduce(list, (total, n) => total + n.prdamount, 0)
+    exchange: _.reduce(list, (total, n) => total + n.prdamount, 0)
   };
-  result.exchange = result.payroll - _.reduce(list, (total, n) => total + n.prdpre, 0);
+  result.payroll = result.exchange + _.reduce(list, (total, n) => total + n.prdpre, 0);
   result.goods = list.map(i => ({
     id: uuid(),
     title: i.prdname,
