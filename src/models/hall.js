@@ -4,6 +4,7 @@
 
 import moment from 'moment';
 import { hallService } from '../services';
+import {Toast} from 'antd-mobile';
 
 export default {
   namespace: 'hall',
@@ -14,14 +15,14 @@ export default {
   reducers: {
     search(state, {payload: {list}}) {
       if (!list.length) {
-        Toast.info('查不到该数据记录！');
+        alert('查不到该数据记录！');
       }
       return { ...state, list: list };
     }
   },
   effects: {
     *submit({payload: {name, gender, date}}, {call, put}) {
-      let formattedDate = moment(date, 'YYYY-MM-DD');
+      let formattedDate = moment(date).format('YYYY-MM-DD');
       let list = yield call(hallService.list, {name, gender, date: formattedDate});
       yield put({type: 'search', payload: { list }});
     }

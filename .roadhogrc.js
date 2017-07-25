@@ -42,6 +42,7 @@ export default {
       }
     },
     production: {
+      publicPath: "/middle/"
     }
   },
   theme: {

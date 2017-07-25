@@ -3,6 +3,7 @@
  */
 
 import { depositService } from '../services';
+import {Toast} from 'antd-mobile';
 
 export default {
   namespace: 'deposit',
@@ -13,7 +14,7 @@ export default {
   reducers: {
     search(state, {payload: {list}}) {
       if (!list.length) {
-        Toast.info('查不到该数据记录！');
+        alert('查不到该数据记录！');
       }
       return { ...state, list: list };
     }

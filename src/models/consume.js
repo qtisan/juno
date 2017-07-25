@@ -16,7 +16,7 @@ export default {
   reducers: {
     search(state, { payload }) {
       if (!payload) {
-        Toast.info('查不到该数据记录！');
+        alert('查不到该数据记录！');
       }
       return { ...state, ...payload };
     }
