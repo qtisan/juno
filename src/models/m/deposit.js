@@ -2,7 +2,7 @@
  * Created by qtisa on 2017/5/15.
  */
 
-import { depositService } from '../services';
+import { depositService } from '../../services/m';
 import {Toast} from 'antd-mobile';
 
 export default {

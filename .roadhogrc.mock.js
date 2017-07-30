@@ -225,7 +225,24 @@ var mocks = {
         "prdprice": 42
       }
     ]
+  },
+
+
+  'GET /*/sample/list': {
+
+    "success": true,
+    "error_no": 0,
+    "message": "ok",
+    "data": [
+      { id: 1, name: 'David Lee' },
+      { id: 2, name: 'Robot Carlos' }
+    ],
+    "columns": [
+      { title: 'Name', dataIndex: 'name', key: 'name' },
+      { title: 'Id', dataIndex: 'id', key: 'id' }
+    ]
   }
+
 
 };
 

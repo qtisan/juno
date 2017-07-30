@@ -12,7 +12,11 @@ const svgSpriteDirs = [
 const pxtorem = require('postcss-pxtorem');
 
 export default {
-  entry: ["src/pages/index.js", "src/pages/m/m.js"],
+  entry: [
+    "src/pages/index.js",
+    "src/pages/m/m.js",
+    "src/pages/tc/tc.js"
+  ],
   outputPath: "./dist",
   svgSpriteLoaderDirs: svgSpriteDirs,
   autoprefixer: {
@@ -26,7 +30,7 @@ export default {
   ],
   extraPostCSSPlugins: [
     pxtorem({
-      rootValue: 100,
+      rootValue: 64, // 全局距离大小比例
       propWhiteList: []
     })
   ],

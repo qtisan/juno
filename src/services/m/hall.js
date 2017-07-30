@@ -1,13 +1,13 @@
 /**
  * Created by qtisa on 2017/5/15.
  */
-import request from '../utils/request';
+import request from '../../utils/request';
 import { stringify } from 'querystring';
-import { parse } from '../utils/parser';
+import { parse } from '../../utils/parser';
 import uuid from 'uuid/v4';
 
 export function *list(data) {
-  let res = yield request(`/middle/deposit/list?${stringify(data)}`);
+  let res = yield request(`/middle/hall/list?${stringify(data)}`);
   console.log(res);
   if (!res.data.success) {
     console.error(res.data.message);
@@ -16,9 +16,10 @@ export function *list(data) {
   return parse(list, {
     id: uuid(),
     name: 'deadname',
-    gender: 'deadsex',
-    age: 'checkprice',
-    expired: 'useend',
-    position: 'checkname'
+    gender: 'sexname',
+    age: 'deadage',
+    date: "hallbegin",
+    hall: "hallname",
+    image: "image"
   });
 }

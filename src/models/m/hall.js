@@ -1,12 +1,13 @@
 /**
- * Created by qtisa on 2017/5/24.
+ * Created by qtisa on 2017/5/15.
  */
 
-import { wallService } from '../services';
+import moment from 'moment';
+import { hallService } from '../../services/m';
 import {Toast} from 'antd-mobile';
 
 export default {
-  namespace: 'wall',
+  namespace: 'hall',
   state: {
     list: [],
     loading: false
@@ -20,8 +21,9 @@ export default {
     }
   },
   effects: {
-    *submit({payload}, {call, put}) {
-      let list = yield call(wallService.list, {payload});
+    *submit({payload: {name, gender, date}}, {call, put}) {
+      let formattedDate = moment(date).format('YYYY-MM-DD');
+      let list = yield call(hallService.list, {name, gender, date: formattedDate});
       yield put({type: 'search', payload: { list }});
     }
   }

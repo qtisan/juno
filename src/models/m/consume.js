@@ -2,7 +2,7 @@
  * Created by qtisa on 2017/5/15.
  */
 
-import { consumeService } from '../services';
+import { consumeService } from '../../services/m';
 import {Toast} from 'antd-mobile';
 
 export default {

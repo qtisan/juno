@@ -2,9 +2,9 @@
  * Created by qtisa on 2017/5/24.
  */
 
-import request from '../utils/request';
+import request from '../../utils/request';
 import { stringify } from 'querystring';
-import { parse } from '../utils/parser';
+import { parse } from '../../utils/parser';
 import uuid from 'uuid/v4';
 import _ from 'lodash';
 
