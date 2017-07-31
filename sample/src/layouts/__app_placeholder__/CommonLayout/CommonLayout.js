@@ -38,7 +38,8 @@ function CommonLayout({ children, title, menus }) {
         {
           subMenus.map(({name, key, icon, subs}) => {
             const showIcon = (ico) => ico && <Icon type={ico} />;
-            const showMenuItem = (n, k, i, p) => <Menu.Item key={k}><a href={`#/${p}/${k}`}>{showIcon(i)}{n}</a></Menu.Item>;
+            const showMenuItem = (n, k, i, p) =>
+              <Menu.Item key={k}><a href={`#/${p}/${k}`}>{showIcon(i)}{n}</a></Menu.Item>;
             if (!subs.length) {
               return showMenuItem(name, key, icon, currentMenu.key);
             }
@@ -63,7 +64,12 @@ function CommonLayout({ children, title, menus }) {
           mode="horizontal"
           defaultSelectedKeys={[currentMenuItems[1]]}
         >
-          {menus.map(({name, key}) => <Menu.Item className={styles.top_menu_item} key={key}><a href={`#/${key}`}>{name}</a></Menu.Item>)}
+          {
+            menus.map(({name, key, icon}) =>
+              <Menu.Item className={styles.top_menu_item} key={key}>
+                <a href={`#/${key}`}>{icon && <Icon type={icon} />}{name}</a>
+              </Menu.Item>)
+          }
         </Menu>
       </Header>
       <Layout>
