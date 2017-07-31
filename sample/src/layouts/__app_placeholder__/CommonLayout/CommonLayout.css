@@ -1,5 +1,31 @@
 
 
 .normal {
+  min-height: 100%;
+}
 
+.header_logo {
+  width: 120px;
+  color: #fff;
+  border-radius: 6px;
+  margin: 16px 28px 16px 0;
+  float: left;
+  height: .5rem;
+  line-height: .5rem;
+}
+
+.top_menu_item {
+  height: 1rem;
+  line-height: 1rem;
+}
+
+.sider_container {
+  width: 200px;
+  background-color: #fff;
+}
+
+.sider_menu {
+  height: 100%;
+  border-right: 0;
+  padding-top: .5rem;
 }

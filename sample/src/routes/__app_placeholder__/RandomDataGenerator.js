@@ -1,3 +1,6 @@
+/**
+ * Created by qtisa on 2017/7/31.
+ */
 import React from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
@@ -10,21 +13,21 @@ import { Button, Table } from 'antd';
 import { createForm } from 'rc-form';
 
 
-function Sample({dispatch, list, columns, loading}) {
+function RandomDataGenerator({dispatch, num, loading}) {
 
   function submit() {
     dispatch({
-      type: 'sample/submit',
+      type: 'random_data_generator/submit',
       payload: {}
     });
   }
 
   return (
-    <Wrapper title={'Sample List'}>
+    <Wrapper>
       <div className={styles.normal}>
-        <Button type="primary" onClick={submit}>Get</Button>
+        <Button type="danger" onClick={submit}>Generate</Button>
       </div>
-      <Table rowKey="id" columns={columns} dataSource={list} />
+      <h1>{num}</h1>
     </Wrapper>
   );
 
@@ -32,12 +35,11 @@ function Sample({dispatch, list, columns, loading}) {
 
 
 function mapStateToProps(state) {
-  const {list, columns} = state.sample;
+  const {num} = state.random_data_generator;
   return {
-    list,
-    columns,
-    loading: state.loading.models.sample
+    num,
+    loading: state.loading.models.random_data_generator
   };
 }
 
-export default connect(mapStateToProps)(createForm()(Sample));
+export default connect(mapStateToProps)(createForm()(RandomDataGenerator));

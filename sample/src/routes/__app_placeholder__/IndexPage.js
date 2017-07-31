@@ -3,20 +3,26 @@
  */
 import React from 'react';
 import { connect } from 'dva';
+import './index.css';
 
-function IndexPage() {
+import Wrapper from './Wrapper';
+import { createForm } from 'rc-form';
+
+function IndexPage({dispatch, content}) {
   return (
-    <div>
-      <h1>Sample List</h1>
-      <div></div>
-      <ul>
-        <li><a href="#/Sample" target="_blank">Show List</a></li>
-      </ul>
-    </div>
+    <Wrapper>
+      <h1>{content}</h1>
+    </Wrapper>
   );
 }
 
-IndexPage.propTypes = {
-};
+function mapStateToProps(state) {
+  const {content} = state.index_page;
+  return {
+    content,
+    loading: state.loading.models.index_page
+  };
+}
 
-export default connect()(IndexPage);
+export default connect(mapStateToProps)(createForm()(IndexPage));
+
