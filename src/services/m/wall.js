@@ -17,8 +17,8 @@ export function *list(data) {
     id: uuid(),
     name: 'deadname',
     gender: 'deadsex',
-    age: 87,
-    expired: 'enddate',
+    age: 'deadage',
+    expired: 'enddatecn',
     position: 'tname'
   });
 }

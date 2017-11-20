@@ -21,7 +21,7 @@ export default {
   },
   effects: {
     *submit({payload}, {call, put}) {
-      let list = yield call(wallService.list, {payload});
+      let list = yield call(wallService.list, {...payload});
       yield put({type: 'search', payload: { list }});
     }
   }

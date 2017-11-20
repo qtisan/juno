@@ -18,7 +18,7 @@ export function *list(data) {
     name: 'deadname',
     gender: 'deadsex',
     age: 'checkprice',
-    expired: 'useend',
+    expired: 'useendcn',
     position: 'checkname'
   });
 }

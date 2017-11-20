@@ -2,6 +2,9 @@
 # production
 /dist
 dist.*
+dist-*.*
+*.psd
+*.psb
 
 # misc
 .DS_Store
@@ -114,4 +117,3 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-

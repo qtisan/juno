@@ -30,7 +30,7 @@ export default {
   ],
   extraPostCSSPlugins: [
     pxtorem({
-      rootValue: 64, // 全局距离大小比例
+      rootValue: 100, // 全局距离大小比例
       propWhiteList: []
     })
   ],

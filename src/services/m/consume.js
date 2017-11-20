@@ -16,14 +16,15 @@ export function *list(data) {
   }
   let list = res.data.data;
   let result = {
-    exchange: _.reduce(list, (total, n) => total + n.prdamount, 0)
+    exchange: _.reduce(list, (total, n) => total + n.prdamount, 0).toFixed(2)
   };
-  result.payroll = result.exchange + _.reduce(list, (total, n) => total + n.prdpre, 0);
+  result.payroll = (parseFloat(result.exchange) + _.reduce(list, (total, n) => total + n.prdpre, 0)).toFixed(2);
   result.goods = list.map(i => ({
     id: uuid(),
     title: i.prdname,
     count: i.prdcount,
-    price: i.prdprice
+    price: i.prdprice,
+    date: i.billdatecn.substr(0, 10)
   }));
   return result;
 }

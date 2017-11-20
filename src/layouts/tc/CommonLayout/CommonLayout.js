@@ -9,7 +9,7 @@ function CommonLayout({ children, title, menus }) {
 
   const findMenuPredicate = (key) => (m) => m.key == key;
   const path = location.hash.split('#')[1].split('?')[0];
-  console.log(`change path to ${path}`);
+  // console.log(`change path to ${path}`);
   const currentMenuItems = path.split('/');
   const currentMenu = menus.find(findMenuPredicate(currentMenuItems[1] || 'index_page'));
   const breadcrumb = [ {name: currentMenu.name, link: `#/${currentMenu.key}`} ];
@@ -76,7 +76,7 @@ function CommonLayout({ children, title, menus }) {
         {createSubMenus(currentMenuItems)}
         <Layout style={{ padding: '0 24px 24px' }}>
           <Breadcrumb style={{ margin: '12px 0' }}>
-            {breadcrumb.map(({name, link}) => <Breadcrumb.Item><a href={link}>{name}</a></Breadcrumb.Item>)}
+            {breadcrumb.map(({name, link}) => <Breadcrumb.Item key={link}><a href={link}>{name}</a></Breadcrumb.Item>)}
           </Breadcrumb>
           <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
             {children}

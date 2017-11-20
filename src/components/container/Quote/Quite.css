@@ -1,0 +1,7 @@
+
+.normal {
+  border: solid 1px #ccc;
+  background-color: #f2f2f2;
+  min-height: 1rem;
+  padding: 0.1rem 0.2rem;
+}

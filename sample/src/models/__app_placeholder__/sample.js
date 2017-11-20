@@ -5,8 +5,7 @@ export default {
   namespace: 'sample',
   state: {
     list: [],
-    columns: [],
-    loading: false
+    columns: []
   },
   reducers: {
     search(state, {payload: {list, columns}}) {

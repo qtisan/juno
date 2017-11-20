@@ -202,6 +202,7 @@ var mocks = {
     "data": [
       {
         "billdate": "new Date(1496232115694)",
+        "billdatecn": "2017-09-30 09:09",
         "prdamount": 100,
         "prdcount": 10,
         "prdname": "香烛",
@@ -210,6 +211,7 @@ var mocks = {
       },
       {
         "billdate": "new Date(1496232115694)",
+        "billdatecn": "2017-09-30 09:09",
         "prdamount": 445.22,
         "prdcount": 10,
         "prdname": "XL大花圈",
@@ -218,6 +220,7 @@ var mocks = {
       },
       {
         "billdate": "new Date(1496232115694)",
+        "billdatecn": "2017-09-30 09:09",
         "prdamount": 424.1,
         "prdcount": 10,
         "prdname": "遗像框3XL精装版",

@@ -4,17 +4,26 @@
 import React from 'react';
 import { connect } from 'dva';
 
-function IndexPage() {
+import { Button, WhiteSpace } from 'antd-mobile';
+import { redirect } from '../../utils/common';
+
+function IndexPage({dispatch}) {
   return (
     <div>
-      <h1>功能清单</h1>
-      <div></div>
-      <ul>
-        <li><a href="#/Hall" target="_blank">礼厅查询</a></li>
-        <li><a href="#/Deposit" target="_blank">寄存查询</a></li>
-        <li><a href="#/Wall" target="_blank">壁葬查询</a></li>
-        <li><a href="#/Consume" target="_blank">消费信息查询</a></li>
-      </ul>
+      <div style={{padding: 20, backgroundColor: '#000', textAlign: 'center'}}>
+        <h3 style={{color: '#fff'}}>殡仪馆自助查询系统</h3>
+      </div>
+      <WhiteSpace />
+      <WhiteSpace />
+      <div style={{padding: 50}}>
+        <Button type="primary" onClick={redirect(dispatch, '/Hall')}>礼厅查询</Button>
+        <WhiteSpace />
+        <Button type="primary" onClick={redirect(dispatch, '/Deposit')}>寄存查询</Button>
+        <WhiteSpace />
+        <Button type="primary" onClick={redirect(dispatch, '/Wall')}>壁葬查询</Button>
+        <WhiteSpace />
+        <Button type="primary" onClick={redirect(dispatch, '/Consume')}>消费信息查询</Button>
+      </div>
     </div>
   );
 }

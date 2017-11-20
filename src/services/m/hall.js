@@ -18,8 +18,11 @@ export function *list(data) {
     name: 'deadname',
     gender: 'sexname',
     age: 'deadage',
-    date: "hallbegin",
-    hall: "hallname",
-    image: "image"
+    date: 'hallbegin',
+    hall: 'hallname',
+    image: {
+      field: 'hallid',
+      parse: hallid => `/middle/images/flat-${hallid}.jpg`
+    }
   });
 }

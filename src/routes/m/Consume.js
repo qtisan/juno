@@ -51,7 +51,7 @@ function Consume({dispatch, form, goods, payroll, exchange, loading}) {
   const row = (rowData, sectionID, rowID) => {
     return (
       <List key={rowID}>
-        <Item extra={`￥${rowData.price} x ${rowData.count}`}>{rowData.title}</Item>
+        <Item extra={`￥${rowData.price} x ${rowData.count}`}>{rowData.title}<span style={{fontSize: "0.8em", color: '#999', marginLeft: 30}}>{rowData.date}</span></Item>
       </List>
     );
   };
@@ -95,7 +95,7 @@ function Consume({dispatch, form, goods, payroll, exchange, loading}) {
         <div style={{ textAlign: 'center' }} className={globalStyle.no_padding}>
           <List style={{width: '100%'}} renderHeader={() => '合计'} >
             <Item arrow="horizontal" multipleLine>
-              实付：￥{exchange} <Brief>原价：￥{payroll}，优惠：￥{payroll-exchange}</Brief>
+              实付：￥{exchange} <Brief>原价：￥{payroll}，优惠：￥{(payroll-exchange).toFixed(2)}</Brief>
             </Item>
           </List>
           <WhiteSpace size="xl" />

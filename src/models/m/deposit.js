@@ -21,7 +21,7 @@ export default {
   },
   effects: {
     *submit({payload}, {call, put}) {
-      let list = yield call(depositService.list, {payload});
+      let list = yield call(depositService.list, {...payload});
       yield put({type: 'search', payload: { list }});
     }
   }

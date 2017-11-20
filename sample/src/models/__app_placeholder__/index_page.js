@@ -5,7 +5,6 @@
 export default {
   namespace: 'index_page',
   state: {
-    content: 'Hello, World!',
-    loading: false
+    content: 'Hello, World!'
   }
 }

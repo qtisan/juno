@@ -5,8 +5,7 @@
 export default {
   namespace: 'random_data_generator',
   state: {
-    num: 0,
-    loading: false
+    num: 0
   },
   reducers: {
     submit(state, {payload: {num}}) {

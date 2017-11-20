@@ -3,6 +3,7 @@
  */
 
 import createLoading from 'dva-loading';
+import { routerRedux } from 'dva/router';
 
 export const startApp = (app, router, models, plugins, container) => {
 
@@ -22,4 +23,9 @@ export const startApp = (app, router, models, plugins, container) => {
   app.start(container || '#root');
 
 };
+
+export const classNames = (...styles) => styles.join(' ');
+
+export const redirect = (dispatch, link) => () => dispatch(routerRedux.push(link));
+
 
